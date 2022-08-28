@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000000;
+    height: 125vh;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr;
+    grid-template-areas:"aside nav_bar nav_bar nav_bar"
+                        "aside main main main"
+                        "aside card_container card_container card_container";
+    grid-template-rows: 0.6fr 1.5fr 2fr;
+    overflow-x: hidden;
+}
+i{
+    cursor: pointer;
+}
+/* _________Aside________________- */
+aside{
+    grid-area: aside;
+    background-color: #232224;
+    color: white;
+    gap: 2%;
+    padding: 8px 15px 0 70px;
+    justify-content: space-evenly;
+}
+.m_l_p{
+    gap: 10px;
+}
+aside,
+.m_l_p{
+    display: flex;
+    flex-direction: column;
+}
+.m_l_p h4{
+    text-transform: uppercase;
+    font-size: smaller;
+}
+.group_icon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: smaller;
+    text-transform: capitalize;
+}
+.group_icon i{
+    font-size: 15px;
+}
+.group_icon:hover{
+    cursor: pointer;
+    color: #47b6d1;
+    opacity: 0.5;
+}
+.aside_footer{
+    background-color: #363434;
+    padding: 25px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* ____________Nav_bar______________- */
+.nav_bar{
+    grid-area: nav_bar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: #ffffff;
+}
+.nav_left ul{
+    display: flex;
+    list-style: none;
+    gap: 20%;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+li a{
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+    border-bottom: 2px solid #47b6d1;
+    color: #47b6d1;
+}
+input[type="search"]{
+    background-color: #504545;
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: #ffffff;
+}
+::placeholder{
+    color: #b6afaf;
+}
+.nav_right{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    font-size: smaller;
+}
+
+/* ___________Main_______________ */
+.main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 80px;
+    position: relative;
+}
+.main_left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.godly h2{
+    font-size: xxx-large;
+    margin: 5px 0;
+}
+.play_icon{
+    display: flex;
+    align-items: center;
+}
+.play_icon button{
+    background-color: #22eff7ad;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 40px;
+    margin-right: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgb(100, 95, 95);
+    cursor: pointer;
+}
+.play_icon i{
+    background-color: #ffffff;
+    padding: 7px;
+    color: #000000;
+    border-radius: 10px;
+}
+.main_right{
+    position: absolute;
+    top: -2px;
+    left: 61%;
+    z-index: -1;
+    
+}
+
+/* _______Card_container__________ */
+.card_container{
+    grid-area: card_container;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:"card_left1 card_left1 card_right"
+                        "card_left2 card_left2 card_right";
+    gap: 10px;
+    padding: 10px;  
+}
+.card{
+    background-color: #121213;
+    display: flex;
+    flex-direction: column;
+    padding: 13px 10px;
+    border-radius: 10px;
+    color: white;
+}
+.card p{
+    font-size:x-small;
+}
+.sub_card{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.artist_profile{
+    text-align: center;
+}
+.artist_profile img{
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.card_left1{
+    grid-area: card_left1;
+}
+.card_left2{
+    grid-area: card_left2;
+}
+.card_header{
+    display: flex;
+    justify-content: space-between;
+}
+.sub_card{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* _____________Card-right______________- */
+.card_right{
+    background-color: rgb(38, 39, 39);
+    grid-area: card_right;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    /* align-items: center; */
+}
+.playing{
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+.cover_playing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: smaller;
+    gap: 5px;
+}
+.cover_playing img{
+    border-radius: 20px;
+}
+.volumn{
+    text-align: center;
+}
+input[type="range"]{
+    /* -webkit-appearance: none; */
+    /* background-color: rgb(148, 143, 143); */
+    height: 3px;
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #bdb9b9;
+    border: 2px solid black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+input[type="range"]::-ms-fill-upper{
+    background: yellow;
+}
+.change_song{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.change_song .play{
+    background: #47b6d1;
+    padding: 10px;
+    border-radius: 15px;
+}
+.lyric{
+    text-align: center;
+    font-size: x-small;
+}
